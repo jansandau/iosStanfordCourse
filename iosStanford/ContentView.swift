@@ -11,16 +11,39 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        return ZStack(content: {
-            RoundedRectangle(cornerRadius: 10.0).stroke(lineWidth: 3)
-            RoundedRectangle(cornerRadius: 10.0).fill()
-            Text("😬").font(Font.largeTitle)
+        return HStack(content: {
+            ForEach(0..<4 , content: { index in
+                CardView(isFaceUp: false)
+                
+            })
         })
             .padding()
             .foregroundColor(Color.orange)
+            .font(Font.largeTitle)
     }
 }
 
+//Cardview
+struct CardView: View {
+    
+    var isFaceUp: Bool
+    
+    var body: some View{
+        ZStack(content: {
+            
+            if isFaceUp {
+                
+                RoundedRectangle(cornerRadius: 10.0).stroke(lineWidth: 3)
+                RoundedRectangle(cornerRadius: 10.0).fill()
+                Text(":D")
+                
+            } else{
+                
+                 RoundedRectangle(cornerRadius: 10.0).fill()
+            }
+        })
+    }
+}
 
 
 struct ContentView_Previews: PreviewProvider {
