@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         return HStack(content: {
             ForEach(0..<4 , content: { index in
-                CardView(isFaceUp: false)
+                CardView(isFaceUp: true)
                 
             })
         })
@@ -26,19 +26,21 @@ struct ContentView: View {
 //Cardview
 struct CardView: View {
     
+    var smilies = [":D", ":)", ":)"]
+    
     var isFaceUp: Bool
     
     var body: some View{
         ZStack(content: {
             
             if isFaceUp {
-                
                 RoundedRectangle(cornerRadius: 10.0).stroke(lineWidth: 3)
-                RoundedRectangle(cornerRadius: 10.0).fill()
-                Text(":D")
+                RoundedRectangle(cornerRadius: 10.0).fill(Color.white)
+                Text("Hallo World")
+                    .font(.title)
+                    .foregroundColor(.green )
                 
             } else{
-                
                  RoundedRectangle(cornerRadius: 10.0).fill()
             }
         })
@@ -49,7 +51,6 @@ struct CardView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-        
-    }
+            }
 }
 
