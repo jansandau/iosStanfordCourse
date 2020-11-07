@@ -36,7 +36,7 @@ struct CardView: View {
             if isFaceUp {
                 RoundedRectangle(cornerRadius: 10.0).stroke(lineWidth: 3)
                 RoundedRectangle(cornerRadius: 10.0).fill(Color.white)
-                Text("Hallo World")
+                Text(smilies[1])
                     .font(.title)
                     .foregroundColor(.green )
                 
